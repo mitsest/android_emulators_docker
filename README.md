@@ -1,7 +1,7 @@
 # Android emulators dockerfile
 
-This docker container offers different android SDK version emulators(suitable for testing an android application).
-You can create different emulator configuration files with little effort on  https://mitsest.github.io/avd_conf_generator/ (see below)
+This docker container offers android SDK emulators(API 21 - API 26).
+You can create different emulator configuration files with little effort by using  https://mitsest.github.io/avd_conf_generator/ (see below)
 
 ## Requirements
 
@@ -11,7 +11,7 @@ Your host machine should support KVM (run kvm-ok to check), or the emulator will
 
 ## AVD Configuration (Optional)
 
-If you want to test your app on another emulators' configuration than the ones provided inside avd_conf folder, I created the following tool:
+If you want to test your app on different emulators' configuration than the ones provided inside avd_conf folder, I created the following tool:
 
 https://mitsest.github.io/avd_conf_generator/
 
