@@ -27,7 +27,7 @@ The build script will take care of creating those emulators for you.
 
 docker build  . -t android_emulators \
               --build-arg nvidia_driver=nvidia-legacy-340xx-driver
-
+```
 
 ### nvidia_driver
 I usually run it on Debian Stretch, which uses nvidia-legacy-340xx-driver. So I pass nvidia_driver_version to the build command, in order for the container to be able to make use of the host's gpu.
