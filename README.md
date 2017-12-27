@@ -49,8 +49,6 @@ docker run --privileged --rm \
 
 Take extra note at the exported variable(avd_name).
 
-If you have used the tool described above to produce your own emulator configuration,
-
-change this to reflect the name you 've chosen.
+Change @API_26 with the one of the folder_names inside avd_conf
 
 Have fun and let me know if something went wrong!
