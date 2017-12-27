@@ -38,6 +38,8 @@ RUN apt-get install -qq -y \
     libcanberra-gtk-module \
     libglu1-mesa \
     libxkbfile1 \
+    libgl1-mesa-glx \
+    libgl1-mesa-dri \
     python-software-properties \
     qemu-system-i386 \
     qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils \
