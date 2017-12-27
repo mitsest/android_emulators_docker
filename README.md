@@ -1,4 +1,4 @@
-# Nativescript development environment dockerfile
+# Android emulators dockerfile
 
 This docker container offers different android SDK version emulators(suitable for testing an android application).
 You can create different emulator configuration files with little effort on  https://mitsest.github.io/avd_conf_generator/ (see below)
