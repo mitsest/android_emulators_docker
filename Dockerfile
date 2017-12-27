@@ -69,7 +69,8 @@ RUN add-apt-repository -y ppa:webupd8team/java && \
 # Create emulators
 ADD avd_conf avd_conf
 ADD create_emulators.sh create_emulators.sh
-RUN chmod +x create_emulators.sh && ./create_emulators.sh
+RUN chmod +x create_emulators.sh
+RUN ./create_emulators.sh
 
 # Add nvidia drivers if argument was supplied
 RUN if [ "x$nvidia_driver" = "x" ] ; then echo "Skipping installation of nvidia driver" ; else \
@@ -82,7 +83,7 @@ EF0F382A1A7B6500; do \
 	apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys $key ; done && \
     echo "deb http://httpredir.debian.org/debian/ stretch main contrib non-free" >> /etc/apt/sources.list && \
     apt-get -qq update && \
-    apt install -y -qq linux-headers-$(uname -r1.81M|sed 's/[^-]*-[^-]*-//') $nvidia_driver nvidia-xconfig && \
+    apt install linux-headers-$(uname -r|sed 's/[^-]*-[^-]*-//') $nvidia_driver nvidia-xconfig && \
     nvidia-xconfig ; fi
 
 
