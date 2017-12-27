@@ -83,7 +83,7 @@ EF0F382A1A7B6500; do \
 	apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys $key ; done && \
     echo "deb http://httpredir.debian.org/debian/ stretch main contrib non-free" >> /etc/apt/sources.list && \
     apt-get -qq update && \
-    apt install linux-headers-$(uname -r|sed 's/[^-]*-[^-]*-//') $nvidia_driver nvidia-xconfig && \
+    apt install -qq -y linux-headers-$(uname -r|sed 's/[^-]*-[^-]*-//') $nvidia_driver nvidia-xconfig && \
     nvidia-xconfig ; fi
 
 
