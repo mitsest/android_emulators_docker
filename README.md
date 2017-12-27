@@ -47,8 +47,6 @@ docker run --privileged --rm \
     'cd $ANDROID_HOME/tools && ./emulator @API_26 -gpu on -verbose'
 ```
 
-Take extra note at the exported variable(avd_name).
-
 Change @API_26 with the one of the folder_names inside avd_conf
 
 Have fun and let me know if something went wrong!
