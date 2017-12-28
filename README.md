@@ -24,9 +24,7 @@ The build script will take care of creating those emulators for you.
 ## Build container
 
 ```bash
-
-docker build  . -t android_emulators \
-              --build-arg nvidia_driver=nvidia-legacy-340xx-driver
+docker build  . -t android_emulators --build-arg nvidia_driver=nvidia-legacy-340xx-driver
 ```
 
 ### nvidia_driver
@@ -44,7 +42,7 @@ docker run --privileged --rm \
 		-v /dev/shm:/dev/shm \
 		-e DISPLAY \
 		-t android_emulators \
-    'cd $ANDROID_HOME/tools && ./emulator @API_26 -gpu on -verbose'
+    'cd $ANDROID_HOME/tools && ./emulator @API_22 -gpu on -verbose'
 ```
 
 Change @API_26 with the one of the folder_names inside avd_conf

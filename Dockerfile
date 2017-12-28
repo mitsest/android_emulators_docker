@@ -1,10 +1,6 @@
 FROM ubuntu:17.04
 
 LABEL author="Dimitris Garofalakis<kascrew1@gmail.com>"
-
-# Dockerfile arguments
-ARG nvidia_driver
-
 # Home
 ENV HOME /home/root
 WORKDIR $HOME
@@ -71,20 +67,5 @@ ADD avd_conf avd_conf
 ADD create_emulators.sh create_emulators.sh
 RUN chmod +x create_emulators.sh
 RUN ./create_emulators.sh
-
-# Add nvidia drivers if argument was supplied
-RUN if [ "x$nvidia_driver" = "x" ] ; then echo "Skipping installation of nvidia driver" ; else \
-    for key in \
-7638D0442B90D010 \
-8B48AD6246925553 \
-EF0F382A1A7B6500; do \
-	apt-key adv --keyserver pgp.mit.edu --recv-keys $key || \
-	apt-key adv --keyserver keyserver.pgp.com --recv-keys $key || \
-	apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys $key ; done && \
-    echo "deb http://httpredir.debian.org/debian/ stretch main contrib non-free" >> /etc/apt/sources.list && \
-    apt-get -qq update && \
-    apt install -qq -y linux-headers-$(uname -r|sed 's/[^-]*-[^-]*-//') $nvidia_driver nvidia-xconfig && \
-    nvidia-xconfig ; fi
-
 
 ENTRYPOINT ["/bin/sh", "-c"]
