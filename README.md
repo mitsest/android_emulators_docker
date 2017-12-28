@@ -40,9 +40,9 @@ xhost +local:`docker inspect --format='{{ .Config.Hostname }}' android_emulators
 docker run --privileged --rm \
 		-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
 		-v /dev/shm:/dev/shm \
-		-e DISPLAY \
+		-e DISPLAY=unix$DISPLAY \
 		-t android_emulators \
-    'cd $ANDROID_HOME/tools && ./emulator @API_22 -gpu on -verbose'
+    'cd $ANDROID_HOME/tools && ./emulator @API_21_emulator -gpu off -verbose'
 ```
 
 Change @API_26 with the one of the folder_names inside avd_conf
