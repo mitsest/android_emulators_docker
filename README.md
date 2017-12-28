@@ -24,7 +24,7 @@ The build script will take care of creating those emulators for you.
 ## Build container
 
 ```bash
-docker build  . -t android_emulators --build-arg nvidia_driver=nvidia-legacy-340xx-driver
+docker build  . -t android_emulators
 ```
 
 ### nvidia_driver
