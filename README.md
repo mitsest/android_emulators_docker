@@ -45,6 +45,6 @@ docker run --privileged --rm \
     'cd $ANDROID_HOME/tools && ./emulator @API_21_emulator -gpu off -verbose'
 ```
 
-Change @API_26 with the one of the folder_names inside avd_conf
+Change @API_21_emulator with the one of the folder_names inside avd_conf
 
 Have fun and let me know if something went wrong!
